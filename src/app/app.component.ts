@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  counter = 2;
+  onCounterChange(e) {
+    this.counter = e;
+  }
 }
