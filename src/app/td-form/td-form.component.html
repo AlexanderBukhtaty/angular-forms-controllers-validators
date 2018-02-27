@@ -1,7 +1,10 @@
 <h2>template-driven form</h2>
 <form #registerForm="ngForm" (submit)="onSubmitForm($event)">
   <!--<input [ngModel]="model.name" (ngModelChange)="onChangeName($event)" type="text">-->
-  <input [(ngModel)]="model.name" name="name" type="text">
+  <input [(ngModel)]="model.name" name="name" type="text" minlength="6" appLatinOnly>
+  <div class="field__error" *ngIf="registerForm.controls.name.errors">
+    <pre>{{ registerForm.controls.name.errors | json }}</pre>
+  </div>
   <input [(ngModel)]="model.email" name="email" type="text">
   <app-country-autocomplite name="country" [(ngModel)]="model.country"></app-country-autocomplite>
   <fieldset ngModelGroup="password">
