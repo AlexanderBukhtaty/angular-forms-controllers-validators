@@ -5,7 +5,7 @@
 
   <!--<input [ngModel]="model.name" (ngModelChange)="onChangeName($event)" type="text">-->
   <input [(ngModel)]="model.name" name="name" type="text" minlength="6" appLatinOnly>
-  <div class="field__error" *ngIf="registerForm.controls.name.errors">
+  <div class="field__error" *ngIf="registerForm.controls.name?.errors">
     <pre>{{ registerForm.controls.name.errors | json }}</pre>
   </div>
 

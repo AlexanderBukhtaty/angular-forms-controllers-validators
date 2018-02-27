@@ -1,9 +1,12 @@
 <h2>data-driven form</h2>
 
 
-<form [formGroup]="regForm" novalidate>
+<form [formGroup]="regForm" (ngSubmit)="onSubmit($event)" novalidate>
 
   <input formControlName="name" name="name" type="text">
+  <ng-container *ngIf="regForm.controls['name'].errors && regForm.controls['name'].errors.latinOnlyErr">
+    <div [hidden]="regForm.controls['name'].errors.latinOnlyErr.valid">{{ regForm.controls['name'].errors.latinOnlyErr.message }}</div>
+  </ng-container>
   <input formControlName="email" name="email" type="text">
   <app-country-autocomplite formControlName="country" name="country"></app-country-autocomplite>
 

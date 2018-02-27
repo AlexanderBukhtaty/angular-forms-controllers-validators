@@ -16,6 +16,7 @@ export class CounterComponent implements OnInit {
     return this._value;
   }
   @Output() valueChange: EventEmitter<number> = new EventEmitter();
+
   private _value = 0;
 
 

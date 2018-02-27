@@ -5,7 +5,8 @@ const latinOnlyValidator = (control: FormControl) => {
     console.log('Latin Only validator was called');
     let error = {
       latinOnlyErr: {
-        valid: false
+        valid: false,
+        message: 'error message'
       }
     };
 
@@ -26,18 +27,18 @@ export class DdFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.regForm = new FormGroup({
-      name: new FormControl('defaultName', [Validators.required]),
-      email: new FormControl('defaultName', []),
-      country: new FormControl('Казахстан', []),
-      password: new FormGroup({
-        pass: new FormControl('', [Validators.required]),
-        confirm: new FormControl('', [Validators.required]),
-      }),
-    });
-    /*
+    // this.regForm = new FormGroup({
+    //   name: new FormControl('defaultName', [Validators.required]),
+    //   email: new FormControl('defaultEmail', []),
+    //   country: new FormControl('Казахстан', []),
+    //   password: new FormGroup({
+    //     pass: new FormControl('', [Validators.required]),
+    //     confirm: new FormControl('', [Validators.required]),
+    //   }),
+    // });
+
     this.regForm = this.formBuilder.group({
-      name: ['name', [Validators.required]],
+      name: ['name', [latinOnlyValidator]],
       email: ['email', [Validators.required]],
       country: ['Казахстан', [Validators.required]],
       password: this.formBuilder.group({
@@ -45,12 +46,15 @@ export class DdFormComponent implements OnInit {
         confirm: ['', [Validators.required]]
       })
     });
-    */
 
     this.regForm.valueChanges.subscribe((data) => {
       console.log(data);
     });
 
+
+  }
+  public onSubmit(e) {
+    console.log(e);
   }
 
 }

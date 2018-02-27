@@ -1,8 +1,11 @@
 <h1>Counter</h1>
-<app-counter [(value)]="counter"></app-counter>
-<!--<app-counter [value]="counter" (valueChange)="counter = $event"></app-counter>-->
+<!--<app-counter [(value)]="counter"></app-counter>-->
+<app-counter [value]="counter" (valueChange)="counter = $event"></app-counter>
 <!--<app-counter [value]="counter" (valueChange)="onCounterChange($event)"></app-counter>-->
+
 <p>{{ counter }}</p>
+
+<!--select-->
 
 <h1>Forms</h1>
 <!--<app-td-form></app-td-form>-->

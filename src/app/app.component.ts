@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  counter = 2;
+  counter = 3;
+  selected;
   onCounterChange(e) {
     this.counter = e;
   }
