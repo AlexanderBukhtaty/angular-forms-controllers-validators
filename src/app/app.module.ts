@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TdFormComponent } from './td-form/td-form.component';
 import { DdFormComponent } from './dd-form/dd-form.component';
 import { CounterComponent } from './counter/counter.component';
+import { CountryAutocompliteComponent } from './country-autocomplite/country-autocomplite.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CounterComponent } from './counter/counter.component';
     AppComponent,
     TdFormComponent,
     DdFormComponent,
-    CounterComponent
+    CounterComponent,
+    CountryAutocompliteComponent
   ],
   imports: [
     BrowserModule,

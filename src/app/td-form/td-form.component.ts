@@ -15,6 +15,7 @@ export class TdFormComponent implements OnInit {
   public model = {
     name: 'default',
     email: null,
+    country: 'Казахстан',
     password: {
       pass: null,
       confirm: null,

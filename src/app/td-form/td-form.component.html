@@ -3,6 +3,7 @@
   <!--<input [ngModel]="model.name" (ngModelChange)="onChangeName($event)" type="text">-->
   <input [(ngModel)]="model.name" name="name" type="text">
   <input [(ngModel)]="model.email" name="email" type="text">
+  <app-country-autocomplite name="country" [(ngModel)]="model.country"></app-country-autocomplite>
   <fieldset ngModelGroup="password">
     <input [(ngModel)]="model.password.pass" name="pass" type="password" required>
     <input [(ngModel)]="model.password.confirm" name="confirm" type="password" required>
