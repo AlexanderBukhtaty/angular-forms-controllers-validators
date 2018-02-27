@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-td-form',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./td-form.component.css']
 })
 export class TdFormComponent implements OnInit {
+  // @ViewChild('registerForm', {read: NgForm })
+  // public registerForm: NgForm;
+  @ViewChild('registerForm')
+  public registerForm: NgForm;
 
+  public model = {
+    name: 'default',
+    email: null,
+    password: {
+      pass: null,
+      confirm: null,
+    }
+  };
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  onSubmitForm(e) {
+    console.log(this);
+  }
 }

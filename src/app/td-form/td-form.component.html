@@ -1,3 +1,15 @@
-<p>
-  td-form works!
-</p>
+<h2>template-driven form</h2>
+<form #registerForm="ngForm" (submit)="onSubmitForm($event)">
+  <!--<input [ngModel]="model.name" (ngModelChange)="onChangeName($event)" type="text">-->
+  <input [(ngModel)]="model.name" name="name" type="text">
+  <input [(ngModel)]="model.email" name="email" type="text">
+  <fieldset ngModelGroup="password">
+    <input [(ngModel)]="model.password.pass" name="pass" type="password" required>
+    <input [(ngModel)]="model.password.confirm" name="confirm" type="password" required>
+  </fieldset>
+  <button type="submit" [disabled]="registerForm.invalid">submit</button>
+</form>
+<p>Is valid form: {{ registerForm.valid }}</p>
+<pre>
+  {{ model | json }}
+</pre>
