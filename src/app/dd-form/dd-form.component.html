@@ -1,3 +1,17 @@
-<p>
-  dd-form works!
-</p>
+<h2>data-driven form</h2>
+
+
+<form [formGroup]="regForm" novalidate>
+
+  <input formControlName="name" name="name" type="text">
+  <input formControlName="email" name="email" type="text">
+  <app-country-autocomplite formControlName="country" name="country"></app-country-autocomplite>
+
+  <fieldset formGroupName="password">
+    <input formControlName="pass" name="pass" type="password">
+    <input formControlName="confirm" name="confirm" type="password">
+  </fieldset>
+
+  <button type="submit">submit</button>
+
+</form>
